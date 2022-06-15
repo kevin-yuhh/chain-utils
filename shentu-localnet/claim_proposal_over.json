@@ -1,0 +1,8 @@
+{
+  "description": "my first claim proposal",
+  "proposer": "certik1zexrzljmu3sups2fhw8j6w85ykksu8jvejzt2f",
+  "loss": [{"denom":"uctk", "amount": "2000000000"}],
+  "deposit": [{"denom":"uctk", "amount": "500000000"}],
+  "evidence": "dummy evidence",
+  "pool_id": 1
+}
