@@ -1,7 +1,7 @@
-app=certik
+app=shentud
 
-export DAEMON_NAME=certik
-export DAEMON_HOME=/home/ylee/.$app
+export DAEMON_NAME=shentud
+export DAEMON_HOME=~/.$app
 export DAEMON_RESTART_AFTER_UPGRADE=true
 
 upgradename=Shield-V2

@@ -2,8 +2,8 @@
 set -x
 
 curdir=$(pwd)
-binary=certik
-app=certik
+binary=shentud
+app=shentud
 denom=uctk
 mdenom=ctk
 
@@ -11,8 +11,8 @@ killall $app
 rm -rf ~/.$app
 
 $binary init --chain-id=test testid
-certik config chain-id test
-certik config keyring-backend test
+shentud config chain-id test
+shentud config keyring-backend test
 # only for making stake -> ustake
 # cat ~/.$app/config/genesis.json | sed -e 's:stake:ustake:g' > tmp.json
 # mv tmp.json ~/.$app/config/genesis.json
@@ -33,7 +33,7 @@ $binary collect-gentxs
 cat ~/.$app/config/genesis.json | sed -e 's:"stake":"uctk":g' > tmp.json
 mv tmp.json ~/.$app/config/genesis.json
 
-jq '.app_state.bank.denom_metadata = [{"base": "'$denom'", "denom_units": [{"aliases": [], "denom": "'$denom'", "exponent": 0},{"aliases": [], "denom": "'$mdenom'", "exponent": 6}],"description": "Test token of certik chain", "display": "'$mdenom'"}]' ~/.$app/config/genesis.json > tmp.json
+jq '.app_state.bank.denom_metadata = [{"base": "'$denom'", "denom_units": [{"aliases": [], "denom": "'$denom'", "exponent": 0},{"aliases": [], "denom": "'$mdenom'", "exponent": 6}],"description": "Test token of shentud chain", "display": "'$mdenom'"}]' ~/.$app/config/genesis.json > tmp.json
 mv tmp.json ~/.$app/config/genesis.json
 #jq '.app_state.shield.pool_params.withdraw_period = "100s"' ~/.$app/config/genesis.json > tmp.json
 #mv tmp.json ~/.$app/config/genesis.json
